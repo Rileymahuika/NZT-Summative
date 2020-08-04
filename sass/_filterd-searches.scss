@@ -1,0 +1,151 @@
+.rooms-filter {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 100%;
+    background-color: $secondary-color;
+    margin-top: 5px;
+
+    &__image {
+        height: 200px;
+        width: 300px;
+    }
+
+    &__header {
+        font-family: $font-family;
+        padding: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 24px;
+        width: 100%;
+        color: $primary-color;
+    }
+
+    &__list {
+        font-size: 14px;
+        text-align: left;
+        margin-top: 20px;
+
+        &--after {
+            margin-top: 3px;
+            padding-right: 20px;
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+}
+
+.room-plans {
+    width: 100%;
+    background-color: $secondary-color;
+    font-family: $font-family;
+
+    &__rooms {
+        text-align: center;
+        font-size: 24px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.flexable {
+    display: flex;
+    height: 120px;
+    background-color:  #5FC7ED;
+
+    &__flex {
+        padding: 50px 20px 20px 20px;
+        color: $secondary-color;
+    }
+
+    &__prices {
+        font-size: 40px;
+        color: $secondary-color;
+        display:flex;
+        justify-content: center;
+        padding-top:19px;
+    }
+
+    &__book {
+        color: $secondary-color;
+        display: flex;
+        justify-content: center;
+        padding-bottom:5px
+    }
+
+    &__book-now {
+        color: $primary-color;
+        display: flex;
+        justify-content: center;
+        background-color:$secondary-color;
+    }
+
+    &__prices-box {
+        margin-left:auto;
+        background-color:$primary-color;
+        width:19%;
+        height:90%;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.premium {
+    display: flex;
+    height: 120px;
+    background-color: #24B7EC;
+
+    &__prem {
+        padding: 50px 20px 20px 20px;
+        color: $secondary-color;
+    }
+
+    &__prices {
+        color: $secondary-color;
+    }
+
+    &__book {
+        color: $secondary-color;
+        display: flex;
+        justify-content: center;
+        padding-bottom:5px
+    }
+
+    &__book-now {
+        color: $primary-color;
+        display: flex;
+        justify-content: center;
+        background-color:$secondary-color;
+    }
+
+    &__prices-box {
+        margin-left:auto;
+        background-color:$primary-color;
+        width:19%;
+        height:90%;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+.menu {
+    height: 120px;
+    background-color: #5FC7ED;
+
+    &__menu {
+        padding: 50px 20px 20px 20px;
+        color: $secondary-color;
+    }
+}
+
+.hr1 {
+    width: 22%;
+    position: absolute;
+    margin-top: 12px;
+    left: 22%;
+}
+
+.hr2 {
+    width: 22%;
+    position: absolute;
+    right: 22%;
+    margin-top: -16px;
+
+}

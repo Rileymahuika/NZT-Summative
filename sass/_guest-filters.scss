@@ -1,0 +1,66 @@
+fieldset {
+    border: none;
+    margin-bottom: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#people {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+
+    &__guests {
+          font-family: $font-family;
+          color: $secondary-color;
+          padding: 15px;
+    }
+
+    &__selector {
+        height: 20px;
+        width: 10%;
+        margin-top: 20px;
+
+        &--last {
+            height: 20px;
+            width: 100%;
+            margin-top: 20px;
+            margin-right:20px
+
+        }
+    }
+}
+
+.fa-check {
+    color: $secondary-color;
+    padding:22px;
+    background-color: #5FC7ED;
+
+    &:hover {
+        color: $primary-color;
+        background-color:$secondary-color;
+        @include transition
+    }
+}
+
+#nights {
+    display: flex;
+    flex-direction: row;
+    // width: 100%;
+    height: 60px;
+    background-color: #333;
+
+    &__min {
+        color: $secondary-color;
+        font-family:$font-family;
+        padding:16px 10px 0 30px;
+    }
+
+    &__dropdown {
+        height: 20px;
+        width: 10%;
+        margin-top: 20px;
+    }
+}

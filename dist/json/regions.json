@@ -1,0 +1,74 @@
+{
+    "regions": [
+        {
+            "name": "Wellington",
+            "abbreviation": "WEL",
+            "id": 1
+        },
+        {
+            "name": "Auckland",
+            "abbreviation": "AUK",
+            "id": 1
+        },
+        {
+            "name": "Waikato",
+            "abbreviation": "WAI",
+            "id": 1
+        },
+        {
+            "name": "Northland",
+            "abbreviation": "NL",
+            "id": 1
+        },
+        {
+            "name": "Bay of Plenty",
+            "abbreviation": "BP",
+            "id": 1
+        },
+        {
+            "name": "Hawkes Bay",
+            "abbreviation": "HB",
+            "id": 1
+        },
+        {
+            "name": "Wanganui",
+            "abbreviation": "WAN",
+            "id": 1
+        },
+        {
+            "name": "Gisborne",
+            "abbreviation": "GB",
+            "id": 1
+        },
+        {
+            "name": "West Coast",
+            "abbreviation": "WC",
+            "id": 2
+        },
+        {
+            "name": "Tasman",
+            "abbreviation": "TAS",
+            "id": 2
+        },
+        {
+            "name": "Malborough",
+            "abbreviation": "MLB",
+            "id": 2
+        },
+        {
+            "name": "Canterbury",
+            "abbreviation": "CB",
+            "id": 2
+        },
+        {
+            "name": "Otago",
+            "abbreviation": "OT",
+            "id": 2
+        },
+        {
+            "name": "Southland",
+            "abbreviation": "SL",
+            "id": 2
+        }
+    ]
+}

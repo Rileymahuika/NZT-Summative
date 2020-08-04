@@ -1,0 +1,57 @@
+{
+    "accommodation": [
+        {
+            "id": "1",
+            "type": "HOSTEL",
+            "header": "We got everything you need!",
+            "text": "Looking for an affordable and cruizy experience?",
+            "activity": "Close to local ski fields",
+            "guests": "1",
+            "price": "$30",
+            "meals": "$10",
+            "premium": "$40",
+            "minStay": "1 Night",
+            "maxStay": "10 Nights"
+        },
+        {
+            "id": "2",
+            "type": "HOTEL",
+            "header": "Private pent house",
+            "img": "",
+            "text": "Everything you need to relax",
+            "activity": "In-house hot pools",
+            "guests": "1-2",
+            "price": "$157",
+            "meals": "$55",
+            "premium": "$212",
+            "minStay": "1 Night",
+            "maxStay": "5 Nights"
+        },
+        {
+            "id": "3",
+            "type": "HOUSE",
+            "header": "Lake side view Queenstown",
+            "text": "Enjoy your own private get away",
+            "activity": "Enjoy the local lakes",
+            "guests": "1-4",
+            "price": "$240",
+            "meals": "$35",
+            "premium": "$275",
+            "minStay": "2 Nights",
+            "maxStay": "15 Nights"
+        },
+        {
+            "id": "4",
+            "type": "MOTEL",
+            "header": "Our cosy cabins ready for you",
+            "text": "We got what you need! Come stay.",
+            "activity": "Come get vcosy for quiz nights",
+            "guests": "2-4",
+            "price": "$90",
+            "meals": "$15",
+            "premium": "$105",
+            "minStay": "3 Nights",
+            "maxStay": "10 Nights"
+        }
+    ]
+}

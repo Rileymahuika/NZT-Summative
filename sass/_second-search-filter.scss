@@ -1,0 +1,124 @@
+.second-search-filter {
+    display:flex;
+    background-color:#f6f6f6;
+    // height: 25vh;
+    border-radius: 10px 10px 0px 0px ;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:3%
+}
+.accomodation-filter {
+    display:flex;
+    width: 40%;
+}
+
+#accommodation-dropdown {
+    display: flex;
+    padding: 30px 10px 20px 20px;
+    height: 100%;
+    border: none;
+    border-radius: 10px 0 0 0;
+    background-color: #5FC7ED;
+    font-family: $font-family;
+    color: $secondary-color;
+    font-size: 50px;
+}
+
+.datepicker {
+    flex-direction:column;
+    display: flex;
+    width:100%;
+    font-family:$font-family;
+
+    &__boxes {
+        padding: 4.5px 20px 4.5px 20px;
+    }
+}
+
+.check-in-out {
+
+    font-family:$font-family;
+    text-align: left;
+    background-color:$primary-color;
+    color: $secondary-color;
+    padding: 4.5px 4.5px 4.5px 20px;
+
+    &--in {
+        border-radius: 0 10px 0 0;
+        font-family:$font-family;
+        text-align: left;
+        background-color:$primary-color;
+        color: $secondary-color;
+        padding: 4.5px 4.5px 4.5px 20px;
+    }
+}
+
+.hasDatepicker {
+    width:100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .second-search-filter {
+        display:flex;
+        flex-direction: column;
+        background-color:#f6f6f6;
+        height: 40vh;
+        border-radius: 10px 10px 0px 0px ;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top:3%
+    }
+    .accomodation-filter {
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #accommodation-dropdown {
+        display: flex;
+        padding: 30px 10px 20px 20px;
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-radius: 10px 10px 0 0;
+        background-color: #5FC7ED;
+        font-family: $font-family;
+        color: $secondary-color;
+        font-size: 50px;
+    }
+    
+    .datepicker {
+        flex-direction:column;
+        display: flex;
+        width:100%;
+        font-family:$font-family;
+    
+        &__boxes {
+            padding: 4.5px 20px 16px 20px;
+        }
+    }
+    
+    .check-in-out {
+    
+        font-family:$font-family;
+        text-align: left;
+        background-color:$primary-color;
+        color: $secondary-color;
+        padding: 4.5px 4.5px 4.5px 20px;
+    
+        &--in {
+            border-radius: 0 0 0 0;
+            font-family:$font-family;
+            text-align: left;
+            background-color:$primary-color;
+            color: $secondary-color;
+            padding: 4.5px 4.5px 4.5px 20px;
+        }
+    }
+    
+    .hasDatepicker {
+        width:100%;
+    }
+}
+
+

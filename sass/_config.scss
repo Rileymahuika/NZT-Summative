@@ -1,0 +1,16 @@
+$primary-color: #333;
+$secondary-color: #f6f6f6;
+$header: 26px;
+$subheader: 20px;
+$font-family: 'Signika', sans-serif;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition {
+    transition: all 0.3s ease-in-out;
+}

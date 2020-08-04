@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  <script>
+    $(function () {
+      $("#datepickerout").datepicker();
+    });
+  </script>
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/nav.js"></script>
+
+
+  <title>NZT</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1 class="logo__nzt">NEW ZEALAND TOURISM</h1>
+    </div>
+
+    <div class="menu-btn-background">
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+    </div>
+
+    <nav class="nav nav--hidden">
+      <ul id="menu-nav">
+        <!-- <li id="menu-nav__item">
+          <a id="menu-nav__link" href="/dist/mainpage.html">Home</a>
+        </li> -->
+
+        <!-- DESTINATIONS -->
+        <!-- <li id="menu-nav__item">
+          <a id="menu-nav__link" href="#">Destinations</a>
+        </li> -->
+
+        <!-- THINGS TO DO -->
+        <!-- <li id="menu-nav__item">
+          <a id="menu-nav__link" href="#">Things to do</a>
+        </li> -->
+
+        <!-- ABOUT -->
+        <!-- <li id="menu-nav__item">
+          <a id="menu-nav__link" href="#">About</a>
+        </li> -->
+
+        <!-- STAY -->
+        <!-- <li id="menu-nav__item">
+          <a id="menu-nav__link" href="#">STAY</a>
+        </li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <div class="background-img">
+    <section class="wrapper">
+      <section class="first-search-filter">
+        <!-- MAIN INTO HEADER -->
+        <div class="header">
+          <h1 class="header__header">
+            New Zealand Tourism has partnerd with hundreds off kiwi owned
+            businesses to provide some of the best experiances
+          </h1>
+          <h2 class="header__subheader">Filter some of the best by Region</h2>
+        </div>
+
+        <form novalidate>
+          <!-- ISLANDS DROPDOWN + import json-->
+          <div class="island-filter" data-island="">
+            <select id="island-dropdown" type="button" name="islands"> </select>
+            <span id="island-dropdown-span"></span>
+          </div>
+
+          <!-- REGIONS DROPDOWN + import json -->
+          <div class="region-filter" data-region="">
+            <select id="region-dropdown" type="button" name="regions"> </select>
+            <span id="region-dropdown-span"></span>
+          </div>
+
+          <!-- SEARCH BUTTON + add click listenerns to toggle button -->
+          <div class="search-button">
+            <input id="submit-btn" type="submit" value="Submit">
+          </div>
+
+        </form>
+
+        <!-- CURRENTLY EMPTY FIELD -->
+        <div class="empty-field"></div>
+
+        <!-- SOCAIL ICONS AREA + add and style-->
+        <div class="social-icons"></div>
+      </section>
+    </section>
+  </div>
+
+  <section id="main-click-listener">
+    <section class="second-search-filter active">
+      <!-- ACCOMODATION FILTER + add json file-->
+      <div class="accommodation-filter" data-region="">
+        <select name="" id="accommodation-dropdown">
+
+        </select>
+      </div>
+      <div class="datepicker">
+        <!-- CALANDER + make so selectable-->
+        <h4 class="check-in-out--in">Check in date:</h4>
+        <p class="datepicker__boxes">Date: <input type="text" id="datepicker"></p>
+        <h4 class="check-in-out">Check out date:</h4>
+        <p class="datepicker__boxes">Date: <input type="text" id="datepickerout"></p>
+      </div>
+      <!-- <p class="dates__style2">Check In Date: <input type="text" id="datepicker" /></p>
+        <p class="dates__style">Check Out Date: <input type="text" id="datepickerout" /></p> -->
+      </div>
+    </section>
+
+    <!-- AMOUNT OF PEOPLE + filter by amount of people-->
+    <fieldset novalidate>
+      <div id="people">
+        <!-- adults -->
+        <h3 id="people__guests">Guests</h3>
+        <select id="people__selector" type="button" name="islands">
+          <option id="people__selector1" value="1">1</option>
+          <option id="people__selector1" value="2">2</option>
+          <option id="people__selector1" value="3">3</option>
+          <option id="people__selector1" value="4">4</option>
+        </select>
+
+        <!-- children -->
+        <!-- <h3 id="people__guests">Children</h3>
+        <select id="people__selector" type="button" name="islands">
+          <option id="people__selector1" value="1">1</option>
+          <option id="people__selector1" value="2">2</option>
+          <option id="people__selector1" value="3">3</option>
+        </select> -->
+
+        <!-- infants -->
+        <!-- <h3 id="people__guests">Infants</h3>
+        <select id="people__selector" type="button" name="islands">
+          <option id="people__selector1" value="1">1</option>
+          <option id="people__selector1" value="2">2</option>
+          <option id="people__selector1" value="3">3</option>
+        </select> -->
+
+
+        <!-- FILTER BY NIGHTS -->
+        <!-- min stay -->
+        <div id="nights">
+          <h3 id="nights__min">Min Stay</h3>
+          <select id="nights__dropdown" type="button" name="min"> </select>
+        </div>
+
+        <!-- max stay -->
+        <div id="nights">
+          <h3 id="nights__min">Max Stay</h3>
+          <select id="nights__dropdown" type="button" name="max"> </select>
+        </div>
+
+        <!-- SUBMIT -->
+        <a id="submit-btn" type="submit" value="Submit">
+          <i class="fas fa-check"></i>
+        </a>
+      </div>
+    </fieldset>
+
+    <!-- RESULTS POPUP + add -->
+    <section class="third-search-filter">
+      <div id="search-results">
+        <h1 class="search-header">Based on your search results</h1>
+      </div>
+
+      <!-- ROOM DETAILS -->
+      <!-- <div class="rooms-filter">
+        <img
+          class="rooms-filter__image"
+          src="https://picsum.photos/300/200"
+          alt=""
+        />
+        <div class="rooms-filter__header">
+          Punakaiki Resort
+          <li class="rooms-filter__list">Spectacular views</li>
+          <li class="rooms-filter__list--after">Stunning restaurant</li>
+          <li class="rooms-filter__list--after">Local attractions</li>
+          <li class="rooms-filter__list--after">In-house hot pools</li>
+        </div>
+      </div> -->
+
+      <!-- ROOM RATES -->
+      <!-- <div class="room-plans">
+        <h3 class="room-plans__rooms">
+          <hr class="hr1" />
+          ROOMS
+          <hr class="hr2" />
+        </h3>
+        <div class="flexable">
+          <h3 class="flexable__flex">FLEXABLE</h3>
+        </div>
+        <div class="premium">
+          <h3 class="premium__prem">PREMIUM</h3>
+        </div> -->
+
+      <!-- ONLINE MENU -->
+      <!-- <div class="menu">
+          <h3 class="menu__menu">MENU</h3>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="room-showcase">
+
+    </section>
+  </section>
+</body>
+
+</html>

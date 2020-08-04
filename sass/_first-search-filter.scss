@@ -1,0 +1,110 @@
+.first-search-filter {
+    background-color:#f6f6f6;
+    padding: 0px;
+    border-radius: 0px 0px 10px 10px ;
+    height: 70vh;
+}
+
+.header {
+
+    text-align: center;
+
+  &__header {
+    font-family:$font-family ;
+    font-size: $header;
+    padding: 40px;
+    margin-bottom: 10px;
+  }
+
+  &__subheader {
+    font-size: $subheader;
+    font-family: sans-serif;
+  }
+}
+
+// ISLAND AND REGION DROPDOWN BARS /////////////////////////////@extend
+#island-dropdown {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+}
+
+#region-dropdown {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  display: block;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: .6em 1.4em .5em .8em;
+  width: 100%;
+  max-width: 100%; /* useful when width is set to anything other than 100% */
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+}
+
+.island-filter {
+  margin-top: 20px;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+.region-filter {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+option {
+  font-family: $font-family;
+}
+
+//////////////////////////////////////////
+
+// SEARCH BUTTON ////////////////////////////////
+#myBtn {
+  margin-bottom: 20px;
+  padding: .6em 1.4em .5em .8em;
+  display: block;
+  width: 100%;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+// SOCIAL ICONS ///////////////////////////////
+
+.empty-field {
+  width: 100%;
+  height: 160px;
+  background-color: $secondary-color;
+}
+
+.social-icons {
+  width: 100%;
+  height: 120px;
+  bottom: 0;
+  background-color: #333;
+  border-radius: 0 0 10px 10px;
+}

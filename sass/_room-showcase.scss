@@ -1,0 +1,59 @@
+#room-showcase {
+  margin-left: 20%;
+  margin-right: 20%;
+
+  font-family: $font-family;
+  // height: 100vh;
+
+  &__room {
+    display:flex;
+    margin-top: 5px;
+    background-color: #5fc7ed;
+    padding: 15px;
+    color: $secondary-color;
+  }
+
+  &__roomHeader {
+      font-size: 30px;
+      padding: 10px;
+  }
+
+    &__img {
+        display:flex;
+        flex-direction: row;
+        border: 3px solid #f6f6f6;
+    }
+
+    &__img-img {
+        width: 100%;
+    }
+
+    &__info {
+        display:flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+  &__roomInfo {
+      display:flex;
+      margin-left: 10px;
+
+  }
+
+  &__select {
+      background-color:$primary-color;
+      margin-bottom: 8px;
+  }
+
+  &__select-button {
+      display: flex;
+      justify-content: center;
+      width:100%;
+      color: $secondary-color;
+      padding: 10px;
+
+      &:hover {
+          background-color:#24B7EC;
+      }
+  }
+}

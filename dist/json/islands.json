@@ -1,0 +1,14 @@
+{
+    "islands": [
+        {
+            "name": "North Island",
+            "abbreviation": "NI",
+            "id": 1
+        },
+        {
+            "name": "South Island",
+            "abbreviation": "SI",
+            "id": 2
+        }
+    ]
+}

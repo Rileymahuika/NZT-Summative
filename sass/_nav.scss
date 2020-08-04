@@ -1,0 +1,152 @@
+.logo {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 30px 0 35px 170px;
+  font-family: $font-family;
+  letter-spacing: 3px;
+}
+
+#menu-nav {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #333;
+
+  &__item {
+    list-style: none;
+    position: relative;
+    padding: 10px 30px 6px 30px;
+    transition: 0.5s;
+    box-sizing: border-box;
+    border-right: 1px solid $secondary-color;
+    font-family: $font-family;
+    font-size: 19px;
+    letter-spacing: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item:last-child {
+    border-right: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 0 20px;
+    color: $secondary-color;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  // MAIN NAV //
+  #menu-nav {
+    &__item {
+      padding: 20px 20px;
+      font-size: 18px;
+    }
+
+    // NAV DROP DOWNS //
+    .dropdown {
+      top: 58px;
+    }
+  }
+
+  .logo {
+
+    &__nzt {
+        opacity: 0;
+    }
+  }
+}
+
+// MEDIA MAX 768
+@media screen and (max-width: 768px) {
+  .menu-btn-background {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    z-index: 3;
+
+    // BTN BURGER //
+    .menu-btn {
+      position: fixed;
+      right: 50%;
+      left: 50%;
+      top: 1.6rem;
+      width: 28px;
+      height: 19px;
+      cursor: pointer;
+
+      &__burger {
+        background: $secondary-color;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        top: 8px;
+        border-radius: 5px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          background: $secondary-color;
+          top: -8px;
+          border-radius: 5px;
+        }
+
+        &::after {
+          background: $secondary-color;
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          top: 8px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+// IPAD SCREEN MEDIA VH
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    @include transition;
+
+    &--hidden {
+      transform: translate(0, -100vh);
+    }
+  }
+
+  #menu-nav {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $primary-color;
+    // opacity: 0.98;
+    list-style-type: none;
+
+    &__item {
+      border-right: none;
+      font-size: 30px;
+      line-height: 2rem;
+    }
+  }
+}
