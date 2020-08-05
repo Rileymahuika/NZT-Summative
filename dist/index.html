@@ -46,29 +46,29 @@
 
     <nav class="nav nav--hidden">
       <ul id="menu-nav">
-        <!-- <li id="menu-nav__item">
+        <li id="menu-nav__item">
           <a id="menu-nav__link" href="/dist/mainpage.html">Home</a>
-        </li> -->
+        </li>
 
         <!-- DESTINATIONS -->
-        <!-- <li id="menu-nav__item">
+        <li id="menu-nav__item">
           <a id="menu-nav__link" href="#">Destinations</a>
-        </li> -->
+        </li>
 
         <!-- THINGS TO DO -->
-        <!-- <li id="menu-nav__item">
+        <li id="menu-nav__item">
           <a id="menu-nav__link" href="#">Things to do</a>
-        </li> -->
+        </li>
 
         <!-- ABOUT -->
-        <!-- <li id="menu-nav__item">
+        <li id="menu-nav__item">
           <a id="menu-nav__link" href="#">About</a>
-        </li> -->
+        </li>
 
         <!-- STAY -->
-        <!-- <li id="menu-nav__item">
+        <li id="menu-nav__item">
           <a id="menu-nav__link" href="#">STAY</a>
-        </li> -->
+        </li>
       </ul>
     </nav>
   </header>
@@ -100,7 +100,7 @@
 
           <!-- SEARCH BUTTON + add click listenerns to toggle button -->
           <div class="search-button">
-            <input id="submit-btn" type="submit" value="Submit">
+            <button>Search</button>
           </div>
 
         </form>
@@ -114,19 +114,19 @@
     </section>
   </div>
 
-  <section id="main-click-listener">
+  <wrapper style="display: none">
     <section class="second-search-filter active">
       <!-- ACCOMODATION FILTER + add json file-->
       <div class="accommodation-filter" data-region="">
-        <select name="" id="accommodation-dropdown">
+        <ul id="accommodation-dropdown">
 
-        </select>
+        </ul>
       </div>
       <div class="datepicker">
         <!-- CALANDER + make so selectable-->
-        <h4 class="check-in-out--in">Check in date:</h4>
+        <h3 class="check-in-out--in">Check in date:</h4>
         <p class="datepicker__boxes">Date: <input type="text" id="datepicker"></p>
-        <h4 class="check-in-out">Check out date:</h4>
+        <h3 class="check-in-out">Check out date:</h4>
         <p class="datepicker__boxes">Date: <input type="text" id="datepickerout"></p>
       </div>
       <!-- <p class="dates__style2">Check In Date: <input type="text" id="datepicker" /></p>
@@ -167,13 +167,13 @@
         <!-- min stay -->
         <div id="nights">
           <h3 id="nights__min">Min Stay</h3>
-          <select id="nights__dropdown" type="button" name="min"> </select>
+          <select id="nights__dropdown1" type="button" name="min"> </select>
         </div>
 
         <!-- max stay -->
         <div id="nights">
           <h3 id="nights__min">Max Stay</h3>
-          <select id="nights__dropdown" type="button" name="max"> </select>
+          <select id="nights__dropdown2" type="button" name="max"> </select>
         </div>
 
         <!-- SUBMIT -->
@@ -188,48 +188,21 @@
       <div id="search-results">
         <h1 class="search-header">Based on your search results</h1>
       </div>
-
-      <!-- ROOM DETAILS -->
-      <!-- <div class="rooms-filter">
-        <img
-          class="rooms-filter__image"
-          src="https://picsum.photos/300/200"
-          alt=""
-        />
-        <div class="rooms-filter__header">
-          Punakaiki Resort
-          <li class="rooms-filter__list">Spectacular views</li>
-          <li class="rooms-filter__list--after">Stunning restaurant</li>
-          <li class="rooms-filter__list--after">Local attractions</li>
-          <li class="rooms-filter__list--after">In-house hot pools</li>
-        </div>
-      </div> -->
-
-      <!-- ROOM RATES -->
-      <!-- <div class="room-plans">
-        <h3 class="room-plans__rooms">
-          <hr class="hr1" />
-          ROOMS
-          <hr class="hr2" />
-        </h3>
-        <div class="flexable">
-          <h3 class="flexable__flex">FLEXABLE</h3>
-        </div>
-        <div class="premium">
-          <h3 class="premium__prem">PREMIUM</h3>
-        </div> -->
-
-      <!-- ONLINE MENU -->
-      <!-- <div class="menu">
-          <h3 class="menu__menu">MENU</h3>
-        </div>
-      </div> -->
     </section>
 
+    <!-- ROOM DETAILS -->
     <section id="room-showcase">
 
+
     </section>
-  </section>
+    <div id="room-showcase__select">
+      <h4 id="room-showcase__select-button">Expand Options</h4>
+    </div>
+
+    <main id="rooms-filter" style="display: none">
+
+    </main>
+  </wrapper>
 </body>
 
 </html>
