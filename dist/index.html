@@ -10,21 +10,7 @@
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-    $(function () {
-      $("#datepicker").datepicker();
-    });
-  </script>
-  <script>
-    $(function () {
-      $("#datepickerout").datepicker();
-    });
-  </script>
-
   <script defer src="js/main.js"></script>
   <script defer src="js/nav.js"></script>
 
@@ -114,13 +100,13 @@
     </section>
   </div>
 
-  <wrapper style="display: none">
+  <wrapper>
     <section class="second-search-filter active">
       <!-- ACCOMODATION FILTER + add json file-->
       <div class="accommodation-filter" data-region="">
-        <ul id="accommodation-dropdown">
+        <select id="accommodation-dropdown">
 
-        </ul>
+        </select>
       </div>
       <div class="datepicker">
         <!-- CALANDER + make so selectable-->
@@ -138,30 +124,15 @@
     <fieldset novalidate>
       <div id="people">
         <!-- adults -->
-        <h3 id="people__guests">Guests</h3>
-        <select id="people__selector" type="button" name="islands">
-          <option id="people__selector1" value="1">1</option>
-          <option id="people__selector1" value="2">2</option>
-          <option id="people__selector1" value="3">3</option>
-          <option id="people__selector1" value="4">4</option>
-        </select>
-
-        <!-- children -->
-        <!-- <h3 id="people__guests">Children</h3>
-        <select id="people__selector" type="button" name="islands">
-          <option id="people__selector1" value="1">1</option>
-          <option id="people__selector1" value="2">2</option>
-          <option id="people__selector1" value="3">3</option>
-        </select> -->
-
-        <!-- infants -->
-        <!-- <h3 id="people__guests">Infants</h3>
-        <select id="people__selector" type="button" name="islands">
-          <option id="people__selector1" value="1">1</option>
-          <option id="people__selector1" value="2">2</option>
-          <option id="people__selector1" value="3">3</option>
-        </select> -->
-
+        <div id="people__box">
+          <h3 class="people__guests">Guests</h3>
+          <select id="people__selector" type="button" name="islands">
+            <option id="people__selector1" value="1">1</option>
+            <option id="people__selector1" value="2">2</option>
+            <option id="people__selector1" value="3">3</option>
+            <option id="people__selector1" value="4">4</option>
+          </select>
+        </div>
 
         <!-- FILTER BY NIGHTS -->
         <!-- min stay -->
@@ -171,7 +142,7 @@
         </div>
 
         <!-- max stay -->
-        <div id="nights">
+        <div id="nights--last">
           <h3 id="nights__min">Max Stay</h3>
           <select id="nights__dropdown2" type="button" name="max"> </select>
         </div>

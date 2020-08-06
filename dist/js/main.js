@@ -98,16 +98,15 @@ $("button").click(function() {
 function displayCategories(categories) {
   let html = "";
   for (let i = 0; i < categories.length; i++ ) {
-    // console.log(categories[i].title);
     html += makeCategoryHtml(categories[i]);
   }
   el_categoryList.html(html)
-  addCategoryClickListener();
+  // addCategoryClickListener();
 }
 
 function makeCategoryHtml(category){
   return `
-  <li class="accommodation-selector" data-id="${category.id}">${category.title}</li>
+  <option class="accommodation-selector" data-id="${category.id}">${category.title}</option>
   `
 }
 
@@ -119,8 +118,7 @@ function getAccommodationByCategory() {
       matches.push(categoryArray[i]);
     };
   }
-  console.log(matches)
-  displayRooms(matches)
+  // displayRooms(matches)
 }
 
 // CATEGORY CLICK LISTENER /////////////////////////
@@ -131,15 +129,25 @@ function addCategoryClickListener() {
   })
 }
 
+// CALANDER //////////////////////////////////
+$(function () {
+  $("#datepicker").datepicker();
+});
+
+$(function () {
+  $("#datepickerout").datepicker();
+});
+
 // FILTER BY GUESTS //////////////////////////////////////////////
 
 // MIN NIGHTS STAYING /////////////////////////////////////////
 function displayMinStay(stays) {
   let html = "";
-  for (stay of stays) {
-    html += minNightsHTML(stay);
+  for (let i = 0; i < stays.length; i++ ) {
+    html += minNightsHTML(stays[i]);
   }
-  el_minStayingList.innerHTML = html;
+  el_minStayingList.html(html)
+  // addCategoryClickListener();
 }
 
 // return list
@@ -151,11 +159,11 @@ function minNightsHTML(stay) {
 // MAX NIGHTS STAYING /////////////////////////////////////////
 function displayMaxStay(stays) {
   let html = "";
-  for (stay of stays) {
-    html += maxNightsHTML(stay);
+  for (let i = 0; i < stays.length; i++ ) {
+    html += maxNightsHTML(stays[i]);
   }
-  el_maxStayingList.innerHTML = html;
-  console.log(stay)
+  el_maxStayingList.html(html)
+  // addCategoryClickListener();
 }
 
 // return list
@@ -164,6 +172,11 @@ function maxNightsHTML(stay) {
 <option id="nights__selector" type="button" name="max">${stay.maxStay}</option>
     `;
 }
+
+// ACCEPT FILTER /////////////////////////
+$("h4").click(function() {
+  $("main").show( "fast");
+});
 
 // ROOMS //////////////////////////////////
 // display rooms
@@ -197,31 +210,31 @@ function makeRoomHTML(roomObjects) {
 }
 
 function displayDetailedRooms(details) {
-  let html = "";
-  for (detail of details) {
-    html += makeHTML2(detail);
+  var html = '';
+  for (var i = 0; i < details.length; i++) {
+    html += makeHTML2(details[i]);
   }
-  el_detailedRooms.innerHTML = html;
+  el_detailedRooms.html(html);
 }
 
-$("h4").click(function() {
-  $("main").show( "slow");
-});
+
 
 function makeHTML2(room) {
   // on click function to toggle when button is clicked
   return `
+  <section id="each-room">
+<div id="rooms-filter__boxes">
   <img
-    class="rooms-filter__image"
+    id="rooms-filter__image"
     src="https://picsum.photos/300/200"
     alt=""
   />
-  <div class="rooms-filter__header">
+  <div id="rooms-filter__header">
     ${room.type}
-    <li class="rooms-filter__list">${room.type}</li>
-    <li class="rooms-filter__list--after">${room.header}</li>
-    <li class="rooms-filter__list--after">${room.text}</li>
-    <li class="rooms-filter__list--after">${room.activity}</li>
+    <li id="rooms-filter__list">${room.type}</li>
+    <li id="rooms-filter__list--after">${room.header}</li>
+    <li id="rooms-filter__list--after">${room.text}</li>
+    <li id="rooms-filter__list--after">${room.activity}</li>
   </div>
 </div>
 
@@ -255,7 +268,8 @@ function makeHTML2(room) {
 <div class="menu">
 <h3 class="menu__menu">MENU</h3>
 </div>
-</div>`;
+</div>
+</section>`;
 }
 
 // filter adults by amount of guests required

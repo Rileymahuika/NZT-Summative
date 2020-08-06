@@ -1,66 +1,180 @@
-fieldset {
+@media screen and (min-width: 1024px) {
+h3 {
+        padding: 15px 15px 0px 15px;
+      }
+
+  fieldset {
     border: none;
     margin-bottom: 5px;
     margin-left: 20%;
     margin-right: 20%;
-}
+  }
 
-#people {
+  #people {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     width: 100%;
     height: 60px;
     background-color: #333;
 
-    &__guests {
-          font-family: $font-family;
-          color: $secondary-color;
-          padding: 15px;
-    }
+    &__box {
+        display: flex;
+        font-family: $font-family;
+        color: $secondary-color;
+      }
 
     &__selector {
+      height: 20px;
+      width: 50%;
+      margin-top: 20px;
+
+      &--last {
         height: 20px;
-        width: 10%;
+        width: 100%;
         margin-top: 20px;
-
-        &--last {
-            height: 20px;
-            width: 100%;
-            margin-top: 20px;
-            margin-right:20px
-
-        }
+        margin-right: 20px;
+      }
     }
-}
+  }
 
-.fa-check {
+  .fa-check {
     color: $secondary-color;
-    padding:22px;
-    background-color: #5FC7ED;
+    padding: 22px;
+    background-color: #5fc7ed;
+
 
     &:hover {
-        color: $primary-color;
-        background-color:$secondary-color;
-        @include transition
+      color: $primary-color;
+      background-color: $secondary-color;
+      @include transition;
     }
-}
+  }
 
-#nights {
+
+  #nights {
     display: flex;
     flex-direction: row;
-    // width: 100%;
+    width: 33%;
     height: 60px;
     background-color: #333;
 
     &__min {
-        color: $secondary-color;
-        font-family:$font-family;
-        padding:16px 10px 0 30px;
+      width: 100%;
+      color: $secondary-color;
+      font-family: $font-family;
     }
 
-    &__dropdown {
-        height: 20px;
-        width: 10%;
+    &__dropdown1 {
+        height: 25px;
+        width: 100%;
         margin-top: 20px;
+      }
+  
+      &__dropdown2 {
+        height: 25px;
+        width: 100%;
+        margin-top: 20px;
+      }
+  
+      &--last {
+        display: flex;
+        flex-direction: row;
+        width: 33%;
+        height: 60px;
+        background-color: #333;
+      }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h3 {
+    padding: 15px 15px 0px 15px;
+  }
+  fieldset {
+    height: 27.5vh;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-bottom: 5px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  #people {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+
+    &__box {
+      display: flex;
+      font-family: $font-family;
+      color: $secondary-color;
     }
+
+    &__selector {
+      height: 25px;
+      width: 50%;
+      margin-top: 20px;
+
+      &--last {
+        height: 20px;
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .fa-check {
+    width: 100%;
+    color: $secondary-color;
+    padding: 22px;
+    background-color: #5fc7ed;
+
+    &::before {
+      justify-content: center;
+      display: flex;
+    }
+
+    &:hover {
+      color: $primary-color;
+      background-color: $secondary-color;
+      @include transition;
+    }
+  }
+
+  #nights {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    background-color: #333;
+
+    &__min {
+      color: $secondary-color;
+      font-family: $font-family;
+    }
+
+    &__dropdown1 {
+      height: 25px;
+      width: 50%;
+      margin-top: 20px;
+    }
+
+    &__dropdown2 {
+      height: 25px;
+      width: 50%;
+      margin-top: 20px;
+    }
+
+    &--last {
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      background-color: #333;
+      padding-bottom: 35px;
+    }
+  }
 }

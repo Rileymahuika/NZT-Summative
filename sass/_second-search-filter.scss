@@ -121,4 +121,32 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .second-search-filter {
+        display:flex;
+        background-color:#f6f6f6;
+        height: 45vh;
+        border-radius: 10px 10px 0px 0px ;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top:3%
+    }
+    .accomodation-filter {
+        display:flex;
+        width: 40%;
+    }
+    
+    #accommodation-dropdown {
+        display: flex;
+        padding: 30px 10px 20px 20px;
+        height: 100%;
+        border: none;
+        border-radius: 10px 0 0 0;
+        background-color: #5FC7ED;
+        font-family: $font-family;
+        color: $secondary-color;
+        font-size: 50px;
+    }
+}
+
 

@@ -1,10 +1,19 @@
-.rooms-filter {
+#each-room {
+    margin-bottom: 8px;
+}
+
+#rooms-filter {
     display: flex;
-    flex-direction: row;
-    height: 200px;
-    width: 100%;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: $secondary-color;
     margin-top: 5px;
+
+    &__boxes {
+        display: flex;
+        flex-direction: row;
+    }
 
     &__image {
         height: 200px;
