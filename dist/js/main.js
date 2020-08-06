@@ -161,7 +161,7 @@ function displayMinStay(staysArray) {
     html += minNightsHTML(staysArray[i]);
   }
   el_minStayingList.html(html)
-  // getMinGuestsByCategory();
+  getMinGuestsByCategory();
 }
 
 // return list
@@ -172,24 +172,25 @@ function minNightsHTML(stay) {
 }
 
 // // filter by min guests
-// function getMinGuestsByCategory(id) {
-//   let matches = "";
-//   for (let i = 0; i < minStayArray.length; i++) {
-//     if (minStayArray[i].id === id) {
-//       console.log(id);
-//       matches.push(minStayArray[i]);
-//     }
-//     displayRooms(matches)
-//   }
-// }
+function getMinGuestsByCategory(id) {
+  let matches = [];
+  for (let i = 0; i < minStayArray.length; i++) {
+    if (minStayArray[i].id === id) {
+      console.log(id);
+      matches.push(minStayArray[i]);
+    }
+    displayRooms(matches)
+  }
+}
 
 // //  min stays click listner
-// function addMinGuestsClickListner() {
-//   $('#nights__selector').click(function () {
-//     let id = $(this).data('id');
-//     getMinGuestsByCategory(id);
-//   })
-// }
+function addMinGuestsClickListner() {
+  $('#nights__selector').click(function () {
+    let id = $(this).data('id');
+    console.log($(this).data);
+    getMinGuestsByCategory(id);
+  })
+}
 
 
 // MAX NIGHTS STAYING /////////////////////////////////////////
@@ -199,7 +200,7 @@ function displayMaxStay(staysArray) {
     html += maxNightsHTML(staysArray[i]);
   }
   el_maxStayingList.html(html)
-  addCategoryClickListener();
+  addMinGuestsClickListner();
 }
 
 // return list
