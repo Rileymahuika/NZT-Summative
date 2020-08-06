@@ -10,7 +10,6 @@
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script defer src="js/main.js"></script>
   <script defer src="js/nav.js"></script>
 
@@ -74,13 +73,13 @@
         <form novalidate>
           <!-- ISLANDS DROPDOWN + import json-->
           <div class="island-filter" data-island="">
-            <select id="island-dropdown" type="button" name="islands"> </select>
+            <select id="island-dropdown" name="islands"> </select>
             <span id="island-dropdown-span"></span>
           </div>
 
           <!-- REGIONS DROPDOWN + import json -->
           <div class="region-filter" data-region="">
-            <select id="region-dropdown" type="button" name="regions"> </select>
+            <select id="region-dropdown" name="regions"> </select>
             <span id="region-dropdown-span"></span>
           </div>
 
@@ -100,7 +99,7 @@
     </section>
   </div>
 
-  <wrapper>
+  <wrapper class="toggle">
     <section class="second-search-filter active">
       <!-- ACCOMODATION FILTER + add json file-->
       <div class="accommodation-filter" data-region="">

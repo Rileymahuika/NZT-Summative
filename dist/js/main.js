@@ -7,15 +7,18 @@ const el_minStayingList = $("#nights__dropdown1");
 const el_maxStayingList = $("#nights__dropdown2");
 const el_detailedRooms = $("#rooms-filter");
 const el_categoryList = $("#accommodation-dropdown")
-var categoryArray = [];
+let roomsArray = [];
+let minStayArray = [];
 
 // JSON STUFF //////////////////////////////////
 function init() {
 
   $.getJSON("json/type.json", function (data) {
     let categoryArray = data.type;
-    console.log(categoryArray);
+    let staysArray = data.type;
     displayCategories(categoryArray)
+    displayMinStay(staysArray);
+    displayMaxStay(staysArray);
   });
 
   $.getJSON("json/islands.json", function (data) {
@@ -24,13 +27,16 @@ function init() {
   });
 
   $.getJSON("json/accommodation.json", function (data) {
-    let rooms = data.accommodation;
-    let stays = data.accommodation;
+
     let details = data.accommodation;
-    displayRooms(rooms);
+    roomsArray = data.accommodation;
+    minStayArray = data.accommodation;
+    // let staysArray = data.type;
+    displayRooms(roomsArray);
     displayDetailedRooms(details);
-    displayMinStay(stays);
-    displayMaxStay(stays);
+    getMinGuestsByCategory(minStayArray)
+
+
   });
 }
 
@@ -61,15 +67,7 @@ function islandHTML(island) {
     `;
 }
 
-function filterRegionsByIsland(regions, island) {
-  let matchings = [];
-  for (region of regions) {
-    if (region.id == island) {
-      matchings.push(region);
-    }
-  }
-  return matchings;
-};
+
 // REGIONS //////////////////////////////////
 // display list of regions
 function displayRegions(regions) {
@@ -83,49 +81,62 @@ function displayRegions(regions) {
 // list of returned from selected island
 function regionHTML(region) {
   return `
-<option id="region-dropdown" value="${region.id}">${region.name}</option>
+<option id="region-dropdown__extended" value="${region.id}">${region.name}</option>
     `;
 }
+
+// FILTER REGIONS BY ISLAND /////////////////////////
+function filterRegionsByIsland(regions, island) {
+  let matches = [];
+  for (region of regions) {
+    if (region.id == island) {
+      matches.push(region);
+    }
+  }
+  return matches;
+};
 
 // SEARCH BUTTON //////////////////////////////////
 // make search button toggle
 $("button").click(function() {
-  $("wrapper").show( "fast");
+  $('.toggle').show( "fast");
 });
 
 // ACCOMMODATION /////////////////////////////////
 // VIEW CATEGORY /////////////////////////////
-function displayCategories(categories) {
+function displayCategories(categoriesArray) {
   let html = "";
-  for (let i = 0; i < categories.length; i++ ) {
-    html += makeCategoryHtml(categories[i]);
+  for (let i = 0; i < categoriesArray.length; i++) {
+    html += makeCategoryHtml(categoriesArray[i]);
   }
   el_categoryList.html(html)
-  // addCategoryClickListener();
+  addCategoryClickListener();
 }
 
-function makeCategoryHtml(category){
+function makeCategoryHtml(category) {
   return `
-  <option class="accommodation-selector" data-id="${category.id}">${category.title}</option>
+  <option class="accommodation-selector" data-id="${category.categoryId}">${category.title}</option>
   `
 }
 
+
+
 // CATEGORY FILTER /////////////////////////////////
-function getAccommodationByCategory() {
+function getAccommodationByCategory(id) {
   let matches = [];
-  for (let i = 0; i < categoryArray.length; i++) {
-    if (categoryArray[i].categoryId) {
-      matches.push(categoryArray[i]);
-    };
+  for (let i = 0; i < roomsArray.length; i++) {
+    if (roomsArray[i].id === id) {
+      matches.push(roomsArray[i]);
+    }
+    displayRooms(matches)
   }
-  // displayRooms(matches)
 }
 
 // CATEGORY CLICK LISTENER /////////////////////////
 function addCategoryClickListener() {
-  $('.accommodation-selector').click(function() {
+  $('.accommodation-selector').click(function () {
     let id = $(this).data('id');
-    getAccommodationByCategory();
+    getAccommodationByCategory(id);
   })
 }
 
@@ -140,36 +151,61 @@ $(function () {
 
 // FILTER BY GUESTS //////////////////////////////////////////////
 
+
+
 // MIN NIGHTS STAYING /////////////////////////////////////////
-function displayMinStay(stays) {
+// display min stay
+function displayMinStay(staysArray) {
   let html = "";
-  for (let i = 0; i < stays.length; i++ ) {
-    html += minNightsHTML(stays[i]);
+  for (let i = 0; i < staysArray.length; i++) {
+    html += minNightsHTML(staysArray[i]);
   }
   el_minStayingList.html(html)
-  // addCategoryClickListener();
+  // getMinGuestsByCategory();
 }
 
 // return list
 function minNightsHTML(stay) {
   return `
-<option id="nights__selector" type="button" name="min">${stay.minStay}</option>
+<option id="nights__selector" type="button" data-id="${stay.categoryId}" name="min">${stay.minStay}</option>
     `;
 }
+
+// // filter by min guests
+// function getMinGuestsByCategory(id) {
+//   let matches = "";
+//   for (let i = 0; i < minStayArray.length; i++) {
+//     if (minStayArray[i].id === id) {
+//       console.log(id);
+//       matches.push(minStayArray[i]);
+//     }
+//     displayRooms(matches)
+//   }
+// }
+
+// //  min stays click listner
+// function addMinGuestsClickListner() {
+//   $('#nights__selector').click(function () {
+//     let id = $(this).data('id');
+//     getMinGuestsByCategory(id);
+//   })
+// }
+
+
 // MAX NIGHTS STAYING /////////////////////////////////////////
-function displayMaxStay(stays) {
+function displayMaxStay(staysArray) {
   let html = "";
-  for (let i = 0; i < stays.length; i++ ) {
-    html += maxNightsHTML(stays[i]);
+  for (let i = 0; i < staysArray.length; i++) {
+    html += maxNightsHTML(staysArray[i]);
   }
   el_maxStayingList.html(html)
-  // addCategoryClickListener();
+  addCategoryClickListener();
 }
 
 // return list
 function maxNightsHTML(stay) {
   return `
-<option id="nights__selector" type="button" name="max">${stay.maxStay}</option>
+<option id="nights__selector" type="button" data-id="${stay.categoryId}" name="max">${stay.maxStay}</option>
     `;
 }
 
@@ -180,17 +216,17 @@ $("h4").click(function() {
 
 // ROOMS //////////////////////////////////
 // display rooms
-function displayRooms(rooms) {
+function displayRooms(roomsArray) {
   var html = '';
-  for (var i = 0; i < rooms.length; i++) {
-    html += makeRoomHTML(rooms[i]);
+  for (var i = 0; i < roomsArray.length; i++) {
+    html += makeRoomHTML(roomsArray[i]);
   }
-el_roomListings.html(html);
+  el_roomListings.html(html);
 }
 
 function makeRoomHTML(roomObjects) {
   return `
-  <div id="room-showcase__room">
+  <div id="room-showcase__room" data-id="${roomObjects.type}">
     <div id="room-showcase__img">
       <img id="room-showcase__img-img" src="https://picsum.photos/300/200" alt="">
     </div>
@@ -209,17 +245,17 @@ function makeRoomHTML(roomObjects) {
     `;
 }
 
+
+// DETAILS ROOMS /////////////////////////////////////
 function displayDetailedRooms(details) {
   var html = '';
   for (var i = 0; i < details.length; i++) {
-    html += makeHTML2(details[i]);
+    html += makeHTML(details[i]);
   }
   el_detailedRooms.html(html);
 }
 
-
-
-function makeHTML2(room) {
+function makeHTML(room) {
   // on click function to toggle when button is clicked
   return `
   <section id="each-room">
@@ -247,27 +283,39 @@ function makeHTML2(room) {
 <div class="flexable">
   <h3 class="flexable__flex">FLEXABLE</h3>
   <div class="flexable__prices-box">
+  <a href="">
     <h2 class="flexable__prices">${room.price}
     <br>
     <h5 class="flexable__book">PER NIGHT</h5>
-    <h5 class="flexable__book-now">BOOK NOW</h5>
+    <h5 class="flexable__book-now">ADD TO CART</h5>
     </h2>
+    </a>
   </div>
 </div>
 <div class="premium">
   <h3 class="premium__prem">PREMIUM</h3>
   <div class="premium__prices-box">
+  <a href="">
     <h2 class="flexable__prices">${room.premium}
     <br>
     <h5 class="premium__book">PER NIGHT</h5>
-    <h5 class="premium__book-now">BOOK NOW</h5>
+    <h5 class="premium__book-now">ADD TO CART</h5>
     </h2>
+    </a>
   </div>
 </div>
 
-<div class="menu">
-<h3 class="menu__menu">MENU</h3>
-</div>
+<div class="flexable">
+  <h3 class="flexable__flex">ADD MEAL SERVICE</h3>
+  <div class="flexable__prices-box">
+  <a href="">
+    <h2 class="flexable__prices">${room.meals}
+    <br>
+    <h5 class="flexable__book">PER NIGHT</h5>
+    <h5 class="flexable__book-now">ADD TO CART</h5>
+    </h2>
+    </a>
+  </div>
 </div>
 </section>`;
 }
@@ -278,3 +326,18 @@ function makeHTML2(room) {
 
 // RUN-------------------------
 init();
+
+// GET ACCOMMODATION BY TITLE
+
+// function getAccommodationByTitle(string) {
+//   string = string.toLowerCase();
+//   let matches = [];
+//   for (let i = 0; i < categoryArray.length; i ++) {
+//     let accommodationTitle = categoryArray[i].title.toLowerCase();
+
+//     if (accommodationTitle.includes(string)) {
+//       matches.push(categoryArray[i]);
+//     }
+//   }
+//   displayRooms(matches)
+// }

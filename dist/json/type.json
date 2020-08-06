@@ -4,25 +4,33 @@
         "id": "1",
         "title": "Hostle",
         "category": "north",
-        "categoryId": 1
+        "categoryId": 1,
+        "minStay": "1 Night",
+        "maxStay": "10 Nights"
       },
       {
         "id": "2",
         "title": "Hotel",
         "category": "north",
-        "categoryId": 2
+        "categoryId": 2,
+        "minStay": "1 Night",
+        "maxStay": "5 Nights"
       },
       {
         "id": "3",
         "title": "House",
         "category": "north",
-        "categoryId": 3
+        "categoryId": 3,
+        "minStay": "2 Nights",
+        "maxStay": "15 Nights"
       },
       {
         "id": "4",
         "title": "Motel",
         "category": "south",
-        "categoryId": 4
+        "categoryId": 4,
+        "minStay": "3 Nights",
+        "maxStay": "10 Nights"
       }
     ]
   }
